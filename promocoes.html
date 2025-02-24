@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoções - FastDelivery</title>
+    <link rel="icon" type="image/png" href="./imagens/logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+
+        /* Header fixo e animado */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px;
+            background-color: #ff6200;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            animation: slideIn 1s ease-out;
+            user-select: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(-100%); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .header img {
+            animation: fadeIn 1.5s ease-in-out;
+            margin-right: 10px; /* Espaço entre logo e texto */
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .header > div:nth-child(2) {
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+
+        .btn-custom {
+            background-color: #ff6200;
+            color: white;
+            border: none;
+            transition: transform 0.2s;
+        }
+        .btn-custom:hover {
+            transform: scale(1.05);
+            background-color: #e65b00;
+            color: white;
+        }
+        .navbar-custom {
+            background-color: #ff6200;
+            margin-top: 70px; /* Ajuste para o header fixo */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: white;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #ffe6cc;
+        }
+        .navbar-custom .dropdown-menu {
+            background-color: #ff6200;
+            border: none;
+        }
+        .navbar-custom .dropdown-item {
+            color: white;
+        }
+        .navbar-custom .dropdown-item:hover {
+            background-color: #e65b00;
+            color: #ffe6cc;
+        }
+        .profile-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .footer {
+            background-color: #ff6200;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header fixo -->
+    <div class="header">
+        <div>
+            <img src="./imagens/logo.png" width="50" alt="Logo Fast-Delivery">
+        </div>
+        <div>Fast Delivery</div>
+    </div>
+
+    <!-- Navbar com menu no lado direito e dropdown -->
+    <nav class="navbar navbar-expand-md navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">Promocoes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard-cliente.html">Principal</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Explore Mais
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="perfil.html">Perfil</a></li>
+                            <li><a class="dropdown-item" href="suporte.html">Suporte</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo de Promoções -->
+    <div class="container mt-4 mb-4">
+        <h2 class="text-center mb-4 text-uppercase">Ofertas Especiais</h2>
+        <div class="row">
+            <!-- Promoção 1 -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card promo-card">
+                    <img src="./imagens/pizza-hut.jpg" class="card-img-top" alt="Pizza Promoção">
+                    <div class="card-body">
+                        <h5 class="card-title">Pizza em Dobro</h5>
+                        <p class="card-text">Compre uma pizza grande e leve outra de graça! Válido até 28/02/2025.</p>
+                        <a href="#" class="btn btn-custom w-100">Aproveitar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Promoção 2 -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card promo-card">
+                    <img src="./imagens/fd.jpg" class="card-img-top" alt="Entrega Grátis">
+                    <div class="card-body">
+                        <h5 class="card-title">Entrega Grátis</h5>
+                        <p class="card-text">Pedidos acima de 50 MZN têm entrega grátis no bairro Matundo.</p>
+                        <a href="#" class="btn btn-custom w-100">Aproveitar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Promoção 3 -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card promo-card">
+                    <img src="./imagens/sushi-nigiri-triple.jpg" class="card-img-top" alt="Combo Sushi">
+                    <div class="card-body">
+                        <h5 class="card-title">Combo Sushi</h5>
+                        <p class="card-text">20 peças de sushi por apenas 150 MZN. Promoção relâmpago!</p>
+                        <a href="#" class="btn btn-custom w-100">Aproveitar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 FastDelivery - Todos os direitos reservados</p>
+        <p>suporte@df.com | (
+        258) 845 109 383</p>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
