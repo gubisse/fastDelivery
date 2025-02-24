@@ -233,7 +233,7 @@
 
             e.preventDefault();
             const telefone = document.getElementById('telefone').value;
-            alert(telefone)
+
             // Validação do telefone
             if (!telefone.match(/^8[0-9]{8}$/)) {
                 alert('Insira um número válido: deve começar com 8 e ter 9 dígitos.');
@@ -276,6 +276,7 @@
             resultContainer.classList.add('hidden');
             formContainer.classList.remove('hidden');
             form.reset();
+            alert(isProcurarMode)
             if (isProcurarMode) {
                 codigoContainer.classList.add('hidden');
                 formButton.textContent = 'Procurar';
